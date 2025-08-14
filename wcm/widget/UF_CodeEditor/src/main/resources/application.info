@@ -1,0 +1,24 @@
+application.type=widget
+application.code=UF_CodeEditor
+application.title=UF Code Editor
+application.description=UF Code Editor
+application.category=INTERNO
+application.renderer=freemarker
+application.uiwidget=true
+application.mobileapp=false
+application.icon=uf_widget.png
+locale.file.base.name=UF Code Editor
+developer.code=uF
+developer.name=upFlow.me
+developer.url=http://www.upflow.me
+view.file=view.ftl
+edit.file=edit.ftl
+
+application.resource.css.6=/resources/css/material-darker.css
+application.resource.css.5=/resources/css/UF_CodeEditor.css
+application.resource.css.4=/resources/css/codemirror.css
+application.resource.js.3=/resources/js/UF_CodeEditor.js
+application.resource.js.2=/resources/js/modeSQL.js
+application.resource.js.1=/resources/js/codemirror.js
+
+application.tenant.code=1

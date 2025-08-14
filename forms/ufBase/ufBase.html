@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css" />
+    <link type="text/css" rel="stylesheet" href="ufBase.css">
+    <title>Formulário Base</title>
+</head>
+
+<body class="uF">
+    <div class="fluig-style-guide">
+        <div class="col-md-offset-1 col-md-10 panel panel-default">
+
+            <!-- INÍCIO: formulário geral -->
+            <form class="modForm" role="form" name="frm" id="frm">
+
+                <!-- INÍCIO: título de cabeçalho -->
+                <div class="page-header">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h1 class="fs-no-margin fs-ellipsis fs-full-width uf-colormenu"><i class="fas fa-tasks"></i> Formulário Base <small class="hidden-xs"></small></h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- FINAL: título de cabeçalho -->
+
+                <!-- INÍCIO: cabeçalho do formulário -->
+                <section class="secCabecalho" id="secCabecalho">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-2 col-md-2">
+                            <div class="form-group">
+                                <label class="control-label" for="PROTOCOLO">Nº Protocolo</label>
+                                <input type="text" class="form-control NumSolic" name="PROTOCOLO" readonly>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-2 col-md-2">
+                            <div class="form-group">
+                                <label class="control-label" for="SOLICDATA">Data da Abertura</label>
+                                <input type="text" class="form-control DataSolic" name="SOLICDATA" readonly>
+
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-4 col-md-offset-4 col-md-4">
+                            <div class="form-group status-solicitacao">
+                                <label class="control-label">Status</label>
+                                <input type="text" class="form-control hide cmpStatusCod" name="STATUSCOD" value="1" readonly>
+                                <input type="text" class="form-control hide cmpStatusNome" name="STATUS" value="Início" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- FINAL: cabeçalho do formulário -->
+
+                <!-- INÍCIO: informações do solicitante -->
+                <section class="secSolicitante" id="secSolicitante">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <div class="form-group">
+                                <label class="control-label" for="SOLICNOME">Nome do Solicitante</label>
+                                <input type="text" class="form-control" name="SOLICNOME" readonly>
+                                <input type="hidden" class="form-control" name="SOLICCOD" readonly>
+                            </div>
+                        </div>
+                        <div class="col-xs-5 col-md-6">
+                            <div class="form-group">
+                                <label class="control-label" for="SOLICEMAIL">Email do Solicitante</label>
+                                <input type="text" class="form-control" name="SOLICEMAIL" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- FINAL: informações do solicitante -->
+
+                <!-- INICIO: dados da requisicao -->
+                <section class="secRequisicao" id="secRequisicao">
+                    <div class="panel panel-default">
+                        <div class="page-header">
+                            <h1>
+                                <span style="padding-left: 20px;"
+                                    class="fs-no-margin fs-ellipsis fs-full-width uf-colormenu">
+                                    <i class="fluigicon fluigicon-fileedit icon-lg"></i>
+                                    Dados da Requisição</span>
+                                <small class="title-small"></small>
+                            </h1>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label" for="DATAEXEMPLO">CAMPO DATA</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="DATAEXEMPLO" readonly><span class="input-group-addon iconData"><i class="far fa-calendar-alt"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label" for="MONETARIOEXEMPLO">CAMPO MONETÁRIO</label>
+                                        <input type="text" class="form-control" name="MONETARIOEXEMPLO">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group ufZoom">
+                                        <label class="control-label" for="USUARIO">ZOOM NORMAL</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="USUARIO" placeholder="Selecione..." readonly>
+                                            <span class="input-group-btn">
+                                                <button uf-zoom="USUARIO" class="btn btn-default" type="button" data-loading-text="<i class=&quot;fa fa-circle-o-notch fa-spin&quot;></i>"><span class="fluigicon fluigicon-search-test"></span></button>
+                                            </span>
+                                        </div>
+                                        <input type="hidden" class="form-control codinput" name="USUARIOCOD">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group ufZoom">
+                                        <label class="control-label" for="PROCESSO">Zoom Paginado</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="PROCESSO" placeholder="Selecione..." readonly>
+                                            <span class="input-group-btn">
+                                                <button uf-zoom="PROCESSO" class="btn btn-default" type="button" data-loading-text="<i class=&quot;fa fa-circle-o-notch fa-spin&quot;></i>"><span class="fluigicon fluigicon-search-test"></span></button>
+                                            </span>
+                                        </div>
+                                        <input type="hidden" class="form-control codinput" name="PROCESSOCOD">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="INFOADICIONAIS"> Informações Adicionais </label>
+                                        <textarea class="form-control" rows="4" name="INFOADICIONAIS"></textarea>
+                                        <p class="help-block">Utilize o campo para incluir informações adicionais</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <button type='button' class='btn btn-primary' id="BTNANEXOCOTACAO" name="BTNANEXOCOTACAO">Cotação <i class="fluigicon fluigicon-upload icon-sm"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- FINAL: dados da requisicao -->
+
+                <!-- INICIO: Tabela Pai e Filho -->
+                <section class="secDependentes" id="secDependentes" style="display:none;">
+                    <div class="panel panel-default">
+                        <div class="page-header">
+                            <h1>
+                                <span style="padding-left: 20px;"
+                                    class="fs-no-margin fs-ellipsis fs-full-width uf-colormenu">
+                                    <i class="fluigicon fluigicon-group icon-lg"></i>
+                                    Ações Complementares</span>
+                                <small class="title-small"></small>
+                            </h1>
+                        </div>
+                        <!-- tabela de acoes complementares -->
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <table class="table table-hover table-striped" tablename="tblPaiFilho" noaddbutton="true" nodeletebutton="true">
+                                        <thead>
+                                            <tr class="uppercase">
+                                                <th style="width:98%">Tabela de Pai e Filho</th>
+                                                <th style="width:2%"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="itm-dados ItemVlrTotal">
+                                                    <div id="ZOOMFLUIGPAIEXEMPLO" name="ZOOMFLUIGPAIEXEMPLO"> <!-- ZOOMFLUIGPAIEXEMPLO é usado configurar abrir e fechar novas linhas da tabela -->
+                                                        <div class="row">
+                                                            <!-- CAMPO: zoom para escolher qual acao adicional -->
+                                                            <div class="col-md-3">
+                                                                <div class="form-group ufZoom">
+                                                                    <label class="control-label" for="ZOOMCOMP">Ação</label>
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control" name="ZOOMCOMP" placeholder="Selecione..." readonly>
+                                                                        <span class="input-group-btn">
+                                                                            <button uf-zoom="ZOOMCOMP" class="btn btn-default" type="button" data-loading-text="<i class=&quot;fa fa-circle-o-notch fa-spin&quot;></i>"><span class="fluigicon fluigicon-search-test"></span></button>
+                                                                        </span>
+                                                                    </div>
+                                                                    <input type="hidden" class="form-control" id="ACAOCOD" name="ACAOCOD" readyonly>
+                                                                </div>
+                                                            </div>
+                                                            <!-- CAMPO: data para a acao adicional -->
+                                                            <div class="col-md-3">
+                                                                <div class="form-group">
+                                                                    <label class="control-label" for="DATACOMP">Data da Ação</label>
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control" name="DATACOMP" id="DATACOMP" readonly><span class="input-group-addon iconData"><i class="far fa-calendar-alt"></i></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- CAMPO: campo texto para enviar informacoes sobre a acao adicional -->
+                                                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label" for="OBSCOMP">Informações Adicionais</label>
+                                                                    <textarea class="form-control" rows="1" name="OBSCOMP"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="acoes-linha">
+                                                    <a href="javascript:;" class="remove-linha" uf-removeChild="tblPaiFilho" data-toggle="tooltip" title="Remover Item"><span class="fluigicon fluigicon-remove-circle fluigicon-sm"></span></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-offset-8 col-md-4">
+                                    <button type="button" class="btn btn-primary btn-block" uf-addChild="tblPaiFilho"><i class="fluigicon fluigicon-plus-sign" aria-hidden="true"></i> Nova linha</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </section>
+                <!-- FINAL: Tabela Pai e Filho -->
+
+                <!-- INÍCIO: informações de CEP -->
+                <section class="secCEP" id="secCEP">
+                    <div class="panel panel-default">
+                        <div class="page-header">
+                            <h1>
+                                <span style="padding-left: 20px;"
+                                    class="fs-no-margin fs-ellipsis fs-full-width uf-colormenu">
+                                    <i class="fluigicon fluigicon-fileedit icon-lg"></i>
+                                    Dados do Endereço</span>
+                                <small class="title-small"></small>
+                            </h1>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-3 col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label" for="CEPEXEMPLO"> CEP </label>
+                                        <input type="text" name="CEPEXEMPLO" class="form-control required" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-7 col-md-7">
+                                    <div class="form-group">
+                                        <label class="control-label" for="RUACEPEXEMPLO"> Endereço </label>
+                                        <input type="text" name="RUACEPEXEMPLO" class="form-control" readonly />
+                                    </div>
+                                </div>
+                                <div class="col-sm-2 col-md-2">
+                                    <div class="form-group">
+                                        <label class="control-label" for="NUMEROCEPEXEMPLO"> Nº </label>
+                                        <input type="text" name="NUMEROCEPEXEMPLO" class="form-control required" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-5 col-md-5">
+                                    <div class="form-group">
+                                        <label class="control-label" for="BAIRROCEPEXEMPLO"> Bairro </label>
+                                        <input type="text" name="BAIRROCEPEXEMPLO" class="form-control" readonly />
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label" for="CIDADECEPEXEMPLO"> Cidade </label>
+                                        <input type="text" name="CIDADECEPEXEMPLO" class="form-control" readonly />
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label" for="UFCEPEXEMPLO"> UF </label>
+                                        <input type="text" name="UFCEPEXEMPLO" class="form-control" readonly />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- FINAL: informações de CEP -->
+
+                <!-- INÍCIO: Seção de aprovação -->
+                <section class="secAprovacaoTESTE" id="secAprovacaoTESTE" style="display:none;">
+                    <div class="page-header">
+                        <h2><i class="far fa-calendar-check" aria-hidden="true"></i> Aprovação <small class="hidden-xs"></small></h2>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-4">
+                            <div class="form-group">
+                                <label class="control-label" for="APROVADOTESTE">Aprovado?</label>
+                                <div class="btn-group btn-group-justified opc_aprovacao" data-toggle="buttons">
+                                    <label class="btn btn-default sim"><input type="radio" name="APROVADOTESTE" data-exibicao="Sim, aprovado." id="Aprovado_S" value="S"><span class="fa fa-check-circle"></span> Sim</label>
+                                    <label class="btn btn-default nao"><input type="radio" name="APROVADOTESTE" data-exibicao="Não, reprovado." id="Aprovado_N" value="N"><span class="fa fa-times-circle"></span> Não</label>
+                                </div>
+                                <label class="btn btn-default" style="display:none;"><input type="radio" name="APROVADO" data-exibicao="N/A, sem resposta." id="Aprovado_NA" value="NA">Sem Resposta</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-8">
+                            <div class="form-group">
+                                <label class="control-label" for="APROVADOOBSTESTE">Observações da Aprovação</label>
+                                <textarea class="form-control" rows="1" name="APROVADOOBSTESTE"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 msg-aprov">
+                            <div class="alert" role="alert" style="display:none;" view></div>
+                        </div>
+                        <div style="display:none;">
+                            <div class="col-xs-3">
+                                <div class="form-group">
+                                    <label class="control-label" for="APROVADORIDTESTE">ID do Aprovador</label>
+                                    <input type="text" class="form-control" name="APROVADORIDTESTE">
+                                    <p class="help-block">Id do usuário responsável pela aprovação</p>
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <div class="form-group">
+                                    <label class="control-label" for="APROVADORNOMETESTE">Nome do Aprovador</label>
+                                    <input type="text" class="form-control" name="APROVADORNOMETESTE">
+                                    <p class="help-block">Nome do usuário responsável pela aprovação</p>
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <div class="form-group">
+                                    <label class="control-label" for="APROVADOREMAILTESTE">Email do Aprovador</label>
+                                    <input type="text" class="form-control" name="APROVADOREMAILTESTE">
+                                    <p class="help-block">Email do usuário responsável pela aprovação</p>
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <div class="form-group">
+                                    <label class="control-label" for="APROVADODATATESTE">Dta/Hra da Aprov/Reprov</label>
+                                    <input type="text" class="form-control" name="APROVADODATATESTE">
+                                    <p class="help-block">Data da aprovação/reprovação</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- FINAL: Seção de aprovação -->
+
+                <!-- INÍCIO: rodapé do pedido -->
+                <section class="secRodape" id="secRodape">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <label class="control-label" for="OBSERVACOES">Observações</label>
+                                <span class="form-control obs-processo">Utilize este formulário informar o prosseguimento da admissão.</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <label class="control-label" for="OBSERVACOES">Informações Adicionais</label>
+                                <textarea class="form-control" rows="1" name="OBSERVACOES" id="OBSERVACOES"></textarea>
+                                <p class="help-block">Por favor, utilize a maior quantidade de informações possível.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- FINAL: rodapé do pedido -->
+
+                <!-- INÍCIO: footer -->
+                <section class="page-footer" id="secFooter">
+                    <div class="row text-muted small">
+                        <div class="col-xs-8">
+                            <ul class="info">
+                                <li><script type="text/javascript">document.write(new Date().getFullYear());</script> &copy; Upflow</li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="pull-right">
+                                <ul class="info">
+                                    <li><small>Rep.: Ufbase | v.1.0.versão_estavel</small></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- FINAL: footer -->
+
+                <!-- INÍCIO: campos ocultos do formulário -->
+                <section class="secCamposAux" id="secCamposAux" style="display:none;">
+                </section>
+                <!-- FINAL: campos ocultos do formulário -->
+
+            </form>
+            <!-- FINAL: formulário geral -->
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+    <script src="/webdesk/vcXMLRPC.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+    <script src="sweetalert2.all.min.js" type="text/javascript"></script>
+    <script src="jquery.maskMoney.min.js" type="text/javascript"></script>
+    <script src="mustache.min.js" type="text/javascript"></script>
+    <script src="moment.min.js" type="text/javascript"></script>
+    <script src="moment.pt-br.js" type="text/javascript"></script>
+    <script src="UFFW.js" type="text/javascript"></script>
+    <script src="ufBase.js" type="text/javascript"></script>
+
+</body>
+
+</html>

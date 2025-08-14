@@ -1,0 +1,351 @@
+/**
+ *
+ * @desc        Estilo padrão do formulário
+ * @copyright   2018 upFlow.me
+ * @version     1.0.0
+ *
+ */
+
+/** ========== CONTEÚDO ========== 
+ *
+ * 1. ELEMENTOS UPFLOW.ME
+ * 2. CORES E ITENS PADRÃO DO FORMULÁRIO
+ * 3. TABELA ESTILO UF
+ * 4. CUSTOMIZAÇÕES ESPECÍFICAS DESTE FORMULÁRIO
+ *
+ */
+
+/* ========== 1. ELEMENTOS UPFLOW.ME  ========== */
+.uF .page-footer {
+    padding-top: 10px;
+    margin: 10px 0 20px;
+    border-top: 1px solid #eee;
+}
+.uF .page-footer ul.info {
+    padding: 0px 15px;
+    margin-bottom: 20px;
+    list-style: none;    
+}
+.uF .page-footer ul.info li {
+    display: inline-block;
+}
+.uF .page-footer ul.info > li+li:before {
+    content: "/\00a0";
+    padding: 0 5px;
+    color: #ccc;
+}
+.uF .form-group.ufZoom.desabilitado *,
+.uF section.desabilitado * {
+    pointer-events: none;
+    opacity: .65;
+}
+.uF .form-group.ufZoom input[readonly],
+.uF .form-group.ufZoom .input-group-btn button,
+.uF .form-group.ufZoom .input-group .codinput {
+    background-color: #f7f7f7;
+}
+.uF .fluig-style-guide .form-control[readonly] {
+    color: #555 !important;
+}
+.uF .form-group.ufZoom .input-group .codinput {
+    padding: 10px 6px;
+    font-size: 80%;
+}
+.uF .form-group.ufZoom .input-group-btn button {
+    height: 34px;
+}
+.uF #zoomModal table.dataTable tbody tr.selected {
+    background-color: #fdf7c2;
+}
+.uF #secAprovacao {
+    margin-bottom: 60px;
+}
+
+/* ========== 2. CORES E ITENS PADRÃO DO FORMULÁRIO  ========== */
+.uF section#secCabecalho .status-solicitacao div.status {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+}
+.uF label, 
+.uF .btn {
+    font-weight: lighter !important;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+.uF .form-group input.form-control,
+.uF .form-group textarea.form-control,
+.uF .form-group span.form-control {
+	/* font-size: 16px; */
+	font-weight: bold;
+}
+.uF span.obs-processo {
+    text-align: justify;
+}
+.uF .help-block {
+    font-size: 90% !important;
+}
+.uF input.form-control.sem-borda {
+    border: none;
+    background: none;
+    box-shadow: none;
+    font-weight: 600;
+    cursor: default;
+    padding: 0px !important;
+    pointer-events: none;
+}
+.uF span.sem-borda {
+    font-weight: 600;
+}
+.uF .form-group.has-success .input-group-btn button {
+    color: #dff0d8;
+    border-color: #3c763d;
+    background-color: #3c763d;
+}
+.uF .form-group.has-success .input-group-btn button .fluigicon{
+    color: #dff0d8 !important;
+}
+.uF .form-group.has-error .input-group-btn button {
+    color: #f2dede;
+    border-color: #a94442;
+    background-color: #a94442;
+}
+.uF .form-group.has-error .input-group-btn button .fluigicon{
+    color: #dff0d8 !important;
+}
+.uF .form-group.has-error label.error {
+	font-size: 85% !important;
+	text-transform:none;
+}
+.uF .fluig-style-guide .has-error label {
+    color: #a94442;
+}
+.uF .btn-group.opc_aprovacao .btn-default.sim.active {
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+}
+.uF .btn-group.opc_aprovacao .btn-default.nao.active {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+.uF .btn-group.opc_aprovacao .btn-default.ajuste.active {
+    color: #fff;
+    background-color: #ec971f;
+    border-color: #d58512;
+}
+/* .uF .fluig-style-guide .form-group.has-error .form-control {
+    background-image: linear-gradient(to left,#EF9A9A,#EF9A9A),linear-gradient(to left,#EF9A9A,#EF9A9A) !important;
+} */
+.uF .fluig-style-guide .form-group.has-error .btn-default {
+    box-shadow: inset 0 0 0 1px #a94442 !important;
+}
+.uF .fluig-style-guide .form-group.has-error .btn-default:hover {
+    box-shadow: inset 0 0 0 1px #8a3533 !important;
+}
+.uF .fluig-style-guide .form-group.has-error .input-group .input-group-btn .btn-default:hover {
+    background-color: #8a3533 !important;
+}
+.uF .fluig-style-guide .form-group.has-error .input-group .input-group-addon {
+    border-color: #a94442 !important;
+    background-color: #a94442 !important;
+}
+.uF .fluig-style-guide .has-success label {
+    color: #3c763d;
+}
+/* .uF .fluig-style-guide .form-group.has-success .form-control {
+    background-image: linear-gradient(to left,#A5D6A7,#A5D6A7),linear-gradient(to left,#A5D6A7,#A5D6A7) !important;
+} */
+.uF .fluig-style-guide .form-group.has-success .btn-default {
+    box-shadow: inset 0 0 0 1px #3c763d !important;
+}
+.uF .fluig-style-guide .form-group.has-success .btn-default:hover {
+    box-shadow: inset 0 0 0 1px #2e5f2f !important;
+}
+.uF .fluig-style-guide .form-group.has-success .input-group .input-group-btn .btn-default:hover {
+    background-color: #2e5f2f !important;
+}
+.uF .fluig-style-guide .form-group.has-success .input-group .input-group-addon {
+    border-color: #3c763d !important;
+    background-color: #3c763d !important;
+}
+.uF .form-group.has-error .help-block.fromnow {
+	display: none;
+}
+.uF .fluig-style-guide .alert-success {
+    background-color: #4bad4b;
+}
+.uF .fluig-style-guide .alert-success:before {
+    color: #fff;
+    background-color: #449d44;
+}
+.uF .fluig-style-guide .alert-danger {
+    background-color: #ef5b57;
+}
+.uF .fluig-style-guide .alert-danger:before {
+    color: #fff;
+    background-color: #d9534f;
+}
+.uF .fluig-style-guide .alert-warning {
+    background-color: #ffa622;
+}
+.uF .fluig-style-guide .alert-warning:before {
+    color: #fff;
+    background-color: #ec971f;
+}
+
+/* ========== 3. TABELA ESTILO UF  ========== */
+.uF table.table .help-block {
+    margin-top: 2px;
+    margin-bottom: 0px;
+    font-size: smaller;
+    font-style: italic;
+}
+.uF table.table > thead {
+    background-color: #eee;
+}
+.uF table.table > tfoot > tr > th {
+	border-top: 2px solid #ddd;
+}
+.uF table.table > thead > tr > th {
+	font-weight: 200;
+	border-bottom: 2px solid #ddd;
+}
+.uF table.table > tbody > tr > td {
+    border-bottom: 1px solid #eee;
+	vertical-align: middle;
+}
+.uF table.table > tbody > tr:last-child > td {
+    border-bottom: 2px solid #ddd;
+}
+.uF table.table > tbody > tr > td .form-group {
+    margin-bottom: 0px;
+}
+.uF table.table > tbody > tr > td .form-group input.form-control {
+    padding: 6px;
+}
+.uF table.table > tbody > tr > td.acoes-linha {
+    vertical-align: middle;
+    text-align: right;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.uF table.table > tbody > tr > td.acoes-linha > a {
+	margin-right: 5px;
+	color: #E5E5E5;
+    -webkit-transition-duration: 300ms;
+    -moz-transition-duration: 300ms;
+    -o-transition-duration: 300ms;
+    transition-duration: 300ms;
+}
+.uF table.table > tbody > tr:hover > td.acoes-linha > a:not([disabled]) {
+	color: #595959;
+}
+.uF table.table > tbody > tr > td.acoes-linha > a[disabled] {
+	cursor: not-allowed;
+    pointer-events: none;
+}
+.uF table.table > tbody > tr > td a.acao-linha:hover > span {
+    color: #a94442;
+}
+.uF table.table textarea {
+  resize: vertical; /* user can resize vertically, but width is fixed */
+}
+
+/* ========== 4. CUSTOMIZAÇÕES ESPECÍFICAS DESTE FORMULÁRIO  ========== */
+.uF .alert {
+    padding: 8px;
+    margin-bottom: 0px;
+}
+.uF .tab-content {
+    border: 1px solid #ddd;
+    border-top: none;
+    padding: 25px !important;
+    background-color: #f7f7f7 !important;
+    margin-bottom: 30px;
+}
+.uF .nav-tabs>li.active>a,
+.uF .nav-tabs>li.active>a:hover, 
+.uF .nav-tabs>li.active>a:focus {
+    background-color: #f7f7f7 !important;
+}
+.uF .nav-tabs.nav-justified>.active>a,
+.uF .nav-tabs.nav-justified>.active>a:hover,
+.uF .nav-tabs.nav-justified>.active>a:focus {
+    border-bottom-color: #f7f7f7 !important;
+}
+.uF .btn-group.opc_avaliacao .btn-default.sim.active {
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+}
+.uF .btn-group.opc_avaliacao .btn-default.nao.active {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+.uF input[name="DTAINICIO"], 
+.uF input[name="DTALIMITE"] {
+    background-color: #fff !important;
+}
+.uF .form-group.has-error .help-block.fromnow {
+	display: none;
+}
+.uF .form-group .input-group-addon {
+	cursor: pointer;
+}
+.uF .secCondInicio .alert {
+    margin-bottom: 20px;
+}
+.btn-default.ajuste.active {
+    color: #fff !important;
+    background-color: #ec971f !important;
+    border-color: #d58512 !important;
+}
+
+.has-error .select2-custom-theme.select2-container .select2-selection--single, .has-error .select2-custom-theme.select2-container .select2-selection--multiple {
+    background-image: linear-gradient(to left,#a94442,#c5312f),linear-gradient(to left,#a94442,#c5312f) !important;
+}
+
+.has-success .select2-custom-theme.select2-container .select2-selection--single, .has-success .select2-custom-theme.select2-container .select2-selection--multiple {
+    background-image: linear-gradient(to left,#3c763d,#36af38),linear-gradient(to left,#3c763d,#36af38) !important;
+}
+
+.has-error .select2-custom-theme .select2-fluigicon-zoom{
+    background-color: #a94442 !important;
+    border-color: #a94442 !important;
+}
+
+.has-success .select2-custom-theme .select2-fluigicon-zoom{
+    background-color: #3c763d !important;
+    border-color: #3c763d !important;
+}
+
+.fluig-style-guide #zoomModal .pagination {
+	margin: 0;
+	padding-left: revert;
+}
+.flex-container { 
+	display: flex; 
+	align-content: space-between; 
+} 
+          
+.flex-container > div { 
+	background-color: #fff; 
+	padding: 10px 15px; 
+} 
+
+.flex-container > div:first-child { 
+	margin-right:auto
+} 

@@ -1,0 +1,30 @@
+# @desc        Tabela de Ocorrências
+# @copyright   2018 upFlow.me
+# @version     2.0.0
+# @author      Helbert Campos <helbert@upflow.me>
+
+application.type=widget
+application.code=UF_VIEW1
+application.title=Tabela PONG UF
+application.description=Tabela PONG UF
+application.category=Service Desk
+application.renderer=freemarker
+application.uiwidget=true
+application.mobileapp=true
+application.icon=uf_widget.png
+locale.file.base.name=UF_VIEW1
+
+developer.code=uF
+developer.name=upFlow.me
+developer.url=http://www.upflow.me
+
+view.file=view.ftl
+edit.file=edit.ftl
+
+# carregamento dos estilos CSS
+application.resource.css.1=/resources/css/UF_VIEW1.css
+
+# inclusão de plugins
+
+# carregamento dos scripts
+#application.resource.js.2=/resources/js/UF_VIEW1.js
