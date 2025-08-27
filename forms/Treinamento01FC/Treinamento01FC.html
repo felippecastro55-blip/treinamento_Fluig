@@ -75,7 +75,50 @@
                 <!-- FINAL: informações do solicitante -->
 
                 <!-- INICIO: dados da requisicao -->
-                <section class="secRequisicao" id="secRequisicao">
+                 <section class="secRequisicao" id="secRequisicao">
+                    <div class="panel panel-default">
+                        <div class="page-header">
+                            <h1>
+                                <span style="padding-left: 20px;"
+                                    class="fs-no-margin fs-ellipsis fs-full-width uf-colormenu">
+                                    <i class="fluigicon fluigicon-fileedit icon-lg"></i>
+                                    Dados da Requisição</span>
+                                <small class="title-small"></small>
+                            </h1>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row"> 
+                                <div class="col-md-3">
+                                    <div class="form-group ufZoom">
+                                        <label class="control-label" for="USUARIO">ZOOM NORMAL</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="USUARIO" placeholder="Selecione..." readonly>
+                                            <span class="input-group-btn">
+                                                <button uf-zoom="USUARIO" class="btn btn-default" type="button" data-loading-text="<i class=&quot;fa fa-circle-o-notch fa-spin&quot;></i>"><span class="fluigicon fluigicon-search-test"></span></button>
+                                            </span>
+                                        </div>
+                                        <input type="hidden" class="form-control codinput" name="USUARIOCOD">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="INFOADICIONAIS"> Informações Adicionais </label>
+                                        <textarea class="form-control" rows="4" name="INFOADICIONAIS"></textarea>
+                                        <p class="help-block">Utilize o campo para incluir informações adicionais</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <button type='button' class='btn btn-primary' id="BTNANEXOCOTACAO" name="BTNANEXOCOTACAO">Cotação <i class="fluigicon fluigicon-upload icon-sm"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- <section class="secRequisicao" id="secRequisicao">
                     <div class="panel panel-default">
                         <div class="page-header">
                             <h1>
@@ -143,7 +186,7 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> -->
                 <!-- FINAL: dados da requisicao -->
 
                 <!-- INICIO: Tabela Pai e Filho -->

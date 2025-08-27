@@ -4,12 +4,9 @@ function afterProcessFinish(processId){
 	
     // Lista com os possíveis status de finalizado
 	var lstAtiv = {
-        4: {
+        8: {
 	    	tit: 'Solicitação Finalizada',
-        },
-        6: {
-	    	tit: 'Solicitação Cancelada',
-        },
+        }
 	   
 	};
 	hAPI.setCardValue("STATUSCOD", atvAtual);

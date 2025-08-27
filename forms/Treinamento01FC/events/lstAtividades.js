@@ -32,30 +32,30 @@ lstAtiv = {
         cfn: '#FFEBEE',
         ico: '<span class="fluigicon fluigicon-remove-circle"></span>',
     },
-    1: {
+    4: {
         tit: 'Início',
         des: 'Atividade está em preenchimento de formulário.',
         cbk: '#757575',
         cfn: '#F5F5F5',
         ico: '<span class="fluigicon fluigicon-add-test"></span>',
     },
-    2: {
-        tit: 'Em Execução',
-        des: 'Atividade em andamento utilizando os materiais e mão-de-obra definidos.',
+    5: {
+        tit: 'Aprovação de Férias',
+        des: 'Atividade em aprovação do RH.',
         cbk: '##2E7D32',
         cfn: '#E8F5E9',
         ico: '<span class="fluigicon fluigicon-test-refresh"></span>',
     },
-    4: {
-        tit: 'Solicitação Finalizada',
+    7: {
+        tit: 'Ajuste Solic Férias',
         des: 'Solicitação foi encerrada com sucesso.',
         cbk: '#2E7D32',
         cfn: '#E8F5E9',
         ico: '<span class="fluigicon fluigicon-check-circle-on"></span>',
     },
-    6: {
+    8: {
         tit: 'Solicitação cancelada',
-        des: 'Solicitação não foi aprovada.',
+        des: 'Solicitação finalizada.',
         cbk: '#B71C1C',
         cfn: '#FFEBEE',
         ico: '<span class="fluigicon fluigicon-check-circle-on"></span>',

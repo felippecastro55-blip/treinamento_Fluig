@@ -4,11 +4,14 @@ function beforeSendData(customFields,customFacts){
 	
     // Atualiza o status das atividades em andamento
 	var lstAtiv = {
-	    1: {
+	    4: {
 	        tit: 'Início',
 	    },
-	    2: {
-	    	tit: 'Em Execução',
+	    5: {
+	    	tit: 'Em Aprovação',
+        },
+		7: {
+	    	tit: 'Ajuste Solic Férias',
         },
 	   
 	};

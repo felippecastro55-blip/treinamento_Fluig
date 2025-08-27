@@ -44,7 +44,7 @@ function displayFields(form, customHTML) {
     	customHTML.append("<script type='text/javascript'>"+userActive+"</script>");
     
     // leva as informações do status para o front-end
-    var statusAtivAtual = lstAtiv[1];
+    var statusAtivAtual = lstAtiv[4];
     if (form.getFormMode() != 'ADD') statusAtivAtual = lstAtiv[getValue('WKNumState')];
     // Caso a solicitação for cancelada, manda para a atv de cancelado
     if(form.getValue("STATUSCOD") == '0') {
