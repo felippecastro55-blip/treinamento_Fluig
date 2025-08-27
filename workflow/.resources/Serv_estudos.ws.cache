@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_202" class="java.beans.XMLDecoder">
+ <object class="java.util.HashMap">
+  <void method="put">
+   <string>volume</string>
+   <null/>
+  </void>
+  <void method="put">
+   <string>expediente</string>
+   <array class="java.lang.String" length="1">
+    <void index="0">
+     <string>Default</string>
+    </void>
+   </array>
+  </void>
+  <void method="put">
+   <string>camposFormulario, documentoId = 5</string>
+   <array class="java.lang.String" length="34">
+    <void index="0">
+     <string>ACAOCOD</string>
+    </void>
+    <void index="1">
+     <string>APROVADO</string>
+    </void>
+    <void index="2">
+     <string>APROVADODATATESTE</string>
+    </void>
+    <void index="3">
+     <string>APROVADOOBSTESTE</string>
+    </void>
+    <void index="4">
+     <string>APROVADOREMAILTESTE</string>
+    </void>
+    <void index="5">
+     <string>APROVADORIDTESTE</string>
+    </void>
+    <void index="6">
+     <string>APROVADORNOMETESTE</string>
+    </void>
+    <void index="7">
+     <string>APROVADOTESTE</string>
+    </void>
+    <void index="8">
+     <string>BAIRROCEPEXEMPLO</string>
+    </void>
+    <void index="9">
+     <string>CEPEXEMPLO</string>
+    </void>
+    <void index="10">
+     <string>CIDADECEPEXEMPLO</string>
+    </void>
+    <void index="11">
+     <string>DATACOMP</string>
+    </void>
+    <void index="12">
+     <string>DATAEXEMPLO</string>
+    </void>
+    <void index="13">
+     <string>INFOADICIONAIS</string>
+    </void>
+    <void index="14">
+     <string>MONETARIOEXEMPLO</string>
+    </void>
+    <void index="15">
+     <string>NUMEROCEPEXEMPLO</string>
+    </void>
+    <void index="16">
+     <string>OBSCOMP</string>
+    </void>
+    <void index="17">
+     <string>OBSERVACOES</string>
+    </void>
+    <void index="18">
+     <string>PROCESSO</string>
+    </void>
+    <void index="19">
+     <string>PROCESSOCOD</string>
+    </void>
+    <void index="20">
+     <string>PROTOCOLO</string>
+    </void>
+    <void index="21">
+     <string>RUACEPEXEMPLO</string>
+    </void>
+    <void index="22">
+     <string>SOLICCOD</string>
+    </void>
+    <void index="23">
+     <string>SOLICDATA</string>
+    </void>
+    <void index="24">
+     <string>SOLICEMAIL</string>
+    </void>
+    <void index="25">
+     <string>SOLICLOGIN</string>
+    </void>
+    <void index="26">
+     <string>SOLICNOME</string>
+    </void>
+    <void index="27">
+     <string>STATUS</string>
+    </void>
+    <void index="28">
+     <string>STATUSCOD</string>
+    </void>
+    <void index="29">
+     <string>UFCEPEXEMPLO</string>
+    </void>
+    <void index="30">
+     <string>USUARIO</string>
+    </void>
+    <void index="31">
+     <string>USUARIOCOD</string>
+    </void>
+    <void index="32">
+     <string>ZOOMCOMP</string>
+    </void>
+    <void index="33">
+     <string>ZOOMFLUIGPAIEXEMPLO</string>
+    </void>
+   </array>
+  </void>
+  <void method="put">
+   <string>processosServidor</string>
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Listar Tarefas</string>
+      </void>
+      <void property="processId">
+       <string>FLUIGADHOC</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Treinamento_001</string>
+      </void>
+      <void property="processId">
+       <string>TRE_001_treinamento_Felippe</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Solicitação de Férias</string>
+      </void>
+      <void property="processId">
+       <string>Treinamento01FC</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>mecanismo</string>
+   <array class="[Ljava.lang.Object;" length="9">
+    <void index="0">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Associação</string>
+      </void>
+      <void index="1">
+       <string>Associado</string>
+      </void>
+     </array>
+    </void>
+    <void index="1">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Campo de Formulário</string>
+      </void>
+      <void index="1">
+       <string>Campo Formulário</string>
+      </void>
+     </array>
+    </void>
+    <void index="2">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Executor de Atividade</string>
+      </void>
+      <void index="1">
+       <string>Executor Atividade</string>
+      </void>
+     </array>
+    </void>
+    <void index="3">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Grupo</string>
+      </void>
+      <void index="1">
+       <string>Grupo</string>
+      </void>
+     </array>
+    </void>
+    <void index="4">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Grupos do Colaborador</string>
+      </void>
+      <void index="1">
+       <string>Grupos Colaborador</string>
+      </void>
+     </array>
+    </void>
+    <void index="5">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Papel</string>
+      </void>
+      <void index="1">
+       <string>Papel</string>
+      </void>
+     </array>
+    </void>
+    <void index="6">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição para um Grupo</string>
+      </void>
+      <void index="1">
+       <string>Pool Grupo</string>
+      </void>
+     </array>
+    </void>
+    <void index="7">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição para um Papel</string>
+      </void>
+      <void index="1">
+       <string>Pool Papel</string>
+      </void>
+     </array>
+    </void>
+    <void index="8">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Usuário</string>
+      </void>
+      <void index="1">
+       <string>Usuário</string>
+      </void>
+     </array>
+    </void>
+   </array>
+  </void>
+  <void method="put">
+   <string>forms</string>
+   <object class="java.util.LinkedList">
+    <void method="add">
+     <object class="com.totvs.technology.ecmrestclient.cardindexpublisher.FormVO">
+      <void property="datasetName">
+       <string>FLUIGADHOC</string>
+      </void>
+      <void property="documentDescription">
+       <string>FLUIGADHOC</string>
+      </void>
+      <void property="documentId">
+       <int>3</int>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.technology.ecmrestclient.cardindexpublisher.FormVO">
+      <void property="datasetName">
+       <string>FLUIGADHOCPROCESS</string>
+      </void>
+      <void property="documentDescription">
+       <string>FLUIGADHOCPROCESS</string>
+      </void>
+      <void property="documentId">
+       <int>4</int>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.technology.ecmrestclient.cardindexpublisher.FormVO">
+      <void property="datasetName">
+       <string>TRE_001_Treinamento_Felippe</string>
+      </void>
+      <void property="documentDescription">
+       <string>treinamento_001</string>
+      </void>
+      <void property="documentId">
+       <int>5</int>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>
