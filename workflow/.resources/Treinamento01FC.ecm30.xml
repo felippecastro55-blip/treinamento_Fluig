@@ -28,10 +28,10 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Solicitação de Férias</processId>
-      <version>4</version>
+      <version>7</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
-    <formId>5</formId>
+    <formId>6</formId>
     <editionMode>true</editionMode>
     <updateAttachmentsVersion>false</updateAttachmentsVersion>
     <controlsAttachmentsSecurity>false</controlsAttachmentsSecurity>
@@ -275,7 +275,7 @@
         <companyId>1</companyId>
         <processId>Treinamento01FC</processId>
         <expressionOrder>1</expressionOrder>
-        <version>4</version>
+        <version>7</version>
         <sequence>6</sequence>
       </conditionProcessStatePK>
       <condition>true</condition>

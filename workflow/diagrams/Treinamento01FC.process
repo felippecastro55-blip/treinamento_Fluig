@@ -967,7 +967,7 @@
     <fonts name="Arial" size="8"/>
     <fonts bold="true" name="Arial" size="8"/>
   </pi:Diagram>
-  <bpmn2:BpmnProcess author="" cardIndex="5" category="Treinamento" complementsLevel="1" expedient="Default" extendedFields="&lt;list/&gt;" formSource="server" id="Treinamento01FC" inheritFormSecurity="true" instruction="" keyWord="" mobileReady="true" name="Solicita&#231;&#227;o de F&#233;rias" notifyRequisitionerComplements="true" notifyResponsibleComplements="true" publicProcess="true" serverId="Serv_estudos" version="4" volume="Default"/>
+  <bpmn2:BpmnProcess author="" cardIndex="6" category="Treinamento" complementsLevel="1" expedient="Default" extendedFields="&lt;list/&gt;" formSource="server" id="Treinamento01FC" inheritFormSecurity="true" instruction="" keyWord="" mobileReady="true" name="Solicita&#231;&#227;o de F&#233;rias" notifyRequisitionerComplements="true" notifyResponsibleComplements="true" publicProcess="true" serverId="Serv_estudos" version="7" volume="Default"/>
   <bpmn2:BpmnPool cores="FFFFFF" id="pool1" name="Solicita&#231;&#227;o de F&#233;rias"/>
   <bpmn2:BpmnSwimLane cores="FFFF80" id="swimlane2" name="RH"/>
   <bpmn2:BpmnSwimLane cores="82b0b7" id="bpmnswimlane3" name="Colaborador"/>

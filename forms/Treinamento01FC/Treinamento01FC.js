@@ -18,13 +18,13 @@ $(document).ready(function () {
 			name: 'TESTE', //STRING CHAVE PARA INICIAR APROVACAO
 		},
 		{
-			name: 'DATAEXEMPLO', //NOME DO CAMPO
-			state: { type: 'default', num: [0, 1] }, //type: LISTA DE ESTADO DO FORMULARIO (EX: ['VIEW']). DEFAULT = [MOD, ADD] || NUM = LISTA DE ATIVIDADES QUE TAL CONFIGURAÇÃO VAI AGIR. (EX: [1, 2]). "all" = TODAS 
+			name: 'DATAINIFERIAS', //NOME DO CAMPO
+			state: { type: 'default', num: [0, 4, 7] }, //type: LISTA DE ESTADO DO FORMULARIO (EX: ['VIEW']). DEFAULT = [MOD, ADD] || NUM = LISTA DE ATIVIDADES QUE TAL CONFIGURAÇÃO VAI AGIR. (EX: [1, 2]). "all" = TODAS 
 			fieldType: 'date', //TIPO DE CAMPO DATA
 			validate: ['required'],
 			fieldOptions: {
-				maxDate: moment(),
-				useCurrent: false
+				minDate: moment(),
+				useCurrent: true
 			},
 			customActions: function ($self) { //função para customização
 
@@ -34,19 +34,30 @@ $(document).ready(function () {
 
 				})
 
+				$self.on("change",function(){
+					atualizaDataFim()
+				})
 			}
 		},
 		{
-			state: { type: 'default', num: [0, 1] }, //type: LISTA DE ESTADO DO FORMULARIO (EX: ['VIEW']). DEFAULT = [MOD, ADD] || NUM = LISTA DE ATIVIDADES QUE TAL CONFIGURAÇÃO VAI AGIR. (EX: [1, 2]). "all" = TODAS 
-			name: 'MONETARIOEXEMPLO', //NOME DO CAMPO
+			state: { type: 'default', num: [0, 4, 7] }, //type: LISTA DE ESTADO DO FORMULARIO (EX: ['VIEW']). DEFAULT = [MOD, ADD] || NUM = LISTA DE ATIVIDADES QUE TAL CONFIGURAÇÃO VAI AGIR. (EX: [1, 2]). "all" = TODAS 
+			name: 'DURACAOFERIAS', //NOME DO CAMPO
 			class: ['text-right'],
 			fieldType: 'money', //TIPO DE CAMPO monetario
-			validate: ['required'],
+			validate: ['required','tamanhoMaiorQue10','tamanhoMenorQue30'],
 			fieldOptions: {
-				prefix: 'R$ ',
-				thousands: '.',
-				decimal: ','
+				prefix: '',
+				thousands: '',
+				decimal: ''
 			},
+			customActions: function ($self) { //função para customização
+
+				$self.on("keypress",function(){
+					
+					atualizaDataFim()
+					
+				});
+			}
 		},
 		{
 			state: { type: 'default', num: [0, 1] },
@@ -414,3 +425,30 @@ var beforeSendValidate = function (numState, nextState) {
     },
     "Por favor, forneça ao menos 30 caracteres."
 );
+ $.validator.addMethod(
+    "tamanhoMaiorQue10",
+    function (value, element) {
+        return value >= 10
+    },
+    "Por favor, preencher com valores maior que 10 dias."
+);
+ $.validator.addMethod(
+    "tamanhoMenorQue30",
+    function (value, element) {
+        return value <= 30
+    },
+    "Por favor, preencher com valores menor do que 30 dias."
+);
+
+function atualizaDataFim(){
+	//Buscando valores do campo data inicial e final
+	var dataInicio = $("[name='DATAINIFERIAS']").val()
+	var duracaoFerias = $("[name='DURACAOFERIAS']").val()
+	//buscando campo data fim férias
+	var dataFimFerias = $("[name='DATAFIMFERIAS']")
+	//Adicionando duração a data inicial de férias
+	var data = moment(dataInicio, "DD/MM/YYYY")
+	var dataFinal = data.add(duracaoFerias, 'days').format('DD/MM/YYYY');
+	//Preenchendo campo fim férias
+	dataFimFerias.val(dataFinal)
+}	
