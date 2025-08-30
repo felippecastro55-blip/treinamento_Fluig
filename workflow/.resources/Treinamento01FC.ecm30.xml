@@ -28,7 +28,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Solicitação de Férias</processId>
-      <version>7</version>
+      <version>8</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>6</formId>
@@ -106,10 +106,12 @@
       <stateName>Aprovação de Férias</stateName>
       <stateDescription>Aprovação de Férias</stateDescription>
       <instruction></instruction>
-      <deadlineTime>0</deadlineTime>
+      <deadlineTime>14400</deadlineTime>
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Pool Grupo</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;AprovadoresRH_FC&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -133,7 +135,7 @@
       <allowanceManagerTime>0</allowanceManagerTime>
       <frequenceManagerTime>0</frequenceManagerTime>
       <inhibitTransfer>false</inhibitTransfer>
-      <periodId></periodId>
+      <periodId>Exoediente Férias - FC</periodId>
       <stateType>0</stateType>
       <bpmnType>80</bpmnType>
       <signalId>0</signalId>
@@ -275,7 +277,7 @@
         <companyId>1</companyId>
         <processId>Treinamento01FC</processId>
         <expressionOrder>1</expressionOrder>
-        <version>7</version>
+        <version>8</version>
         <sequence>6</sequence>
       </conditionProcessStatePK>
       <condition>true</condition>

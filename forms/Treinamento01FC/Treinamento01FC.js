@@ -181,7 +181,7 @@ $(document).ready(function () {
 			name: 'INFOADICIONAIS', //NOME DO CAMPO
 			state: { type: 'default', num: [0, 1] }, //type: LISTA DE ESTADO DO FORMULARIO (EX: ['VIEW']). DEFAULT = [MOD, ADD] || NUM = LISTA DE ATIVIDADES QUE TAL CONFIGURAÇÃO VAI AGIR. (EX: [1, 2]). "all" = TODAS 
 			validate: ['required','tamanhoMaiorQue30']
-		}
+		},
 	];
 
 	//Lista contendo objeto de sections
@@ -210,9 +210,9 @@ $(document).ready(function () {
 		{
 			id: 'secAprovacaoTESTE',
 			visible: false, //TRUE = SEMPRE VISIVEL || FALSE = VISIVEL APENAS NAS ATIVIDADES CONTIDAS EM VISIBLEATV
-			visibleAtv: [2, 4, 6], //LISTA DE ATIVIDADES QUE ESSA SECTION É VISIVEL
+			visibleAtv: [5], //LISTA DE ATIVIDADES QUE ESSA SECTION É VISIVEL
 			enabled: true, //TRUE = TAL SECTION É ENABLED EM ALGUMA ATIVIDADE || FALSE = SEMPRE DISABLED
-			enabledAtv: [0, 1, 2] //LISTA DE ATIVIDADES QUE ESSA SECTION NÃO ESTÁ DISABLED
+			enabledAtv: [5] //LISTA DE ATIVIDADES QUE ESSA SECTION NÃO ESTÁ DISABLED
 		},
 		{
 			id: 'secDependentes',
@@ -452,3 +452,4 @@ function atualizaDataFim(){
 	//Preenchendo campo fim férias
 	dataFimFerias.val(dataFinal)
 }	
+

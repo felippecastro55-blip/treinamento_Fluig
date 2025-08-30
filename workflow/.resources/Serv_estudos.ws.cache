@@ -11,7 +11,7 @@
   </void>
   <void method="put">
    <string>camposFormulario, documentoId = 6</string>
-   <array class="java.lang.String" length="30">
+   <array class="java.lang.String" length="26">
     <void index="0">
      <string>ACAOCOD</string>
     </void>
@@ -37,78 +37,84 @@
      <string>APROVADOTESTE</string>
     </void>
     <void index="8">
-     <string>BAIRROCEPEXEMPLO</string>
-    </void>
-    <void index="9">
-     <string>CEPEXEMPLO</string>
-    </void>
-    <void index="10">
-     <string>CIDADECEPEXEMPLO</string>
-    </void>
-    <void index="11">
      <string>DATACOMP</string>
     </void>
-    <void index="12">
+    <void index="9">
+     <string>DATAFIMFERIAS</string>
+    </void>
+    <void index="10">
      <string>DATAINIFERIAS</string>
     </void>
-    <void index="13">
+    <void index="11">
+     <string>DURACAOFERIAS</string>
+    </void>
+    <void index="12">
      <string>INFOADICIONAIS</string>
     </void>
-    <void index="14">
-     <string>NUMEROCEPEXEMPLO</string>
-    </void>
-    <void index="15">
+    <void index="13">
      <string>OBSCOMP</string>
     </void>
-    <void index="16">
+    <void index="14">
      <string>OBSERVACOES</string>
     </void>
-    <void index="17">
+    <void index="15">
      <string>PROTOCOLO</string>
     </void>
-    <void index="18">
-     <string>RUACEPEXEMPLO</string>
-    </void>
-    <void index="19">
+    <void index="16">
      <string>SOLICCOD</string>
     </void>
-    <void index="20">
+    <void index="17">
      <string>SOLICDATA</string>
     </void>
-    <void index="21">
+    <void index="18">
      <string>SOLICEMAIL</string>
     </void>
-    <void index="22">
+    <void index="19">
      <string>SOLICNOME</string>
     </void>
-    <void index="23">
+    <void index="20">
      <string>STATUS</string>
     </void>
-    <void index="24">
+    <void index="21">
      <string>STATUSCOD</string>
     </void>
-    <void index="25">
-     <string>UFCEPEXEMPLO</string>
-    </void>
-    <void index="26">
+    <void index="22">
      <string>USUARIO</string>
     </void>
-    <void index="27">
+    <void index="23">
      <string>USUARIOCOD</string>
     </void>
-    <void index="28">
+    <void index="24">
      <string>ZOOMCOMP</string>
     </void>
-    <void index="29">
+    <void index="25">
      <string>ZOOMFLUIGPAIEXEMPLO</string>
     </void>
    </array>
   </void>
   <void method="put">
+   <string>mecanismoGrupo</string>
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Aprovadores de Ferias pelo RH</string>
+      </void>
+      <void property="groupId">
+       <string>AprovadoresRH_FC</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="put">
    <string>expediente</string>
-   <array class="java.lang.String" length="1">
+   <array class="java.lang.String" length="2">
     <void index="0">
      <string>Default</string>
+    </void>
+    <void index="1">
+     <string>Exoediente Férias - FC</string>
     </void>
    </array>
   </void>
@@ -206,63 +212,6 @@
      </array>
     </void>
    </array>
-  </void>
-  <void method="put">
-   <string>forms</string>
-   <object class="java.util.LinkedList">
-    <void method="add">
-     <object class="com.totvs.technology.ecmrestclient.cardindexpublisher.FormVO">
-      <void property="datasetName">
-       <string>FLUIGADHOC</string>
-      </void>
-      <void property="documentDescription">
-       <string>FLUIGADHOC</string>
-      </void>
-      <void property="documentId">
-       <int>3</int>
-      </void>
-     </object>
-    </void>
-    <void method="add">
-     <object class="com.totvs.technology.ecmrestclient.cardindexpublisher.FormVO">
-      <void property="datasetName">
-       <string>FLUIGADHOCPROCESS</string>
-      </void>
-      <void property="documentDescription">
-       <string>FLUIGADHOCPROCESS</string>
-      </void>
-      <void property="documentId">
-       <int>4</int>
-      </void>
-     </object>
-    </void>
-    <void method="add">
-     <object class="com.totvs.technology.ecmrestclient.cardindexpublisher.FormVO">
-      <void property="datasetName">
-       <string>TRE_001_Treinamento_Felippe</string>
-      </void>
-      <void property="documentDescription">
-       <string>treinamento_001</string>
-      </void>
-      <void property="documentId">
-       <int>5</int>
-      </void>
-     </object>
-    </void>
-    <void method="add">
-     <object class="com.totvs.technology.ecmrestclient.cardindexpublisher.FormVO">
-      <void property="datasetName">
-       <string>Treinamento01FC</string>
-      </void>
-      <void property="documentDescription">
-       <string>Treinamento_001</string>
-      </void>
-      <void property="documentId">
-       <int>6</int>
-      </void>
-     </object>
-    </void>
-   </object>
   </void>
  </object>
 </java>
