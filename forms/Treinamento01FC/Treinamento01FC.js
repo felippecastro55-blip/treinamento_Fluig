@@ -13,7 +13,7 @@ $(document).ready(function () {
 	 */
 	var fieldsConfig = [
 		{
-			state: { type: 'default', num: [2] },
+			state: { type: 'default', num: [5] },
 			fieldType: 'aprovacao', //TIPO DE CAMPO APROVACAO
 			name: 'TESTE', //STRING CHAVE PARA INICIAR APROVACAO
 		},
