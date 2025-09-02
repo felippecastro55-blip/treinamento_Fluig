@@ -126,7 +126,7 @@
                                 <div class="col-sm-3 col-md-3">
                                     <div class="form-group">
                                         <label class="control-label" for="DATAFIMFERIAS">Data Final de Férias</label>
-                                        <input type="text" name="DATAFIMFERIAS" class="form-control" readonly/>
+                                        <input type="text" name="DATAFIMFERIAS" class="form-control" readonly />
                                     </div>
                                 </div>
                             </div>
@@ -233,6 +233,138 @@
                                 <small class="title-small"></small>
                             </h1>
                         </div>
+
+                        <!-- FINAL: Tabela Pai e Filho -->
+
+                        <!-- INÍCIO: informações de CEP -->
+                        <!-- <section class="secCEP" id="secCEP">
+                    <div class="panel panel-default">
+                        <div class="page-header">
+                            <h1>
+                                <span style="padding-left: 20px;"
+                                    class="fs-no-margin fs-ellipsis fs-full-width uf-colormenu">
+                                    <i class="fluigicon fluigicon-fileedit icon-lg"></i>
+                                    Dados do Endereço</span>
+                                <small class="title-small"></small>
+                            </h1>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-3 col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label" for="CEPEXEMPLO"> CEP </label>
+                                        <input type="text" name="CEPEXEMPLO" class="form-control required" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-7 col-md-7">
+                                    <div class="form-group">
+                                        <label class="control-label" for="RUACEPEXEMPLO"> Endereço </label>
+                                        <input type="text" name="RUACEPEXEMPLO" class="form-control" readonly />
+                                    </div>
+                                </div>
+                                <div class="col-sm-2 col-md-2">
+                                    <div class="form-group">
+                                        <label class="control-label" for="NUMEROCEPEXEMPLO"> Nº </label>
+                                        <input type="text" name="NUMEROCEPEXEMPLO" class="form-control required" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-5 col-md-5">
+                                    <div class="form-group">
+                                        <label class="control-label" for="BAIRROCEPEXEMPLO"> Bairro </label>
+                                        <input type="text" name="BAIRROCEPEXEMPLO" class="form-control" readonly />
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label" for="CIDADECEPEXEMPLO"> Cidade </label>
+                                        <input type="text" name="CIDADECEPEXEMPLO" class="form-control" readonly />
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label" for="UFCEPEXEMPLO"> UF </label>
+                                        <input type="text" name="UFCEPEXEMPLO" class="form-control" readonly />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> -->
+                        <!-- FINAL: informações de CEP -->
+
+                        <!-- INÍCIO: Seção de aprovação -->
+                        <section class="secAprovacaoTESTE" id="secAprovacaoTESTE" style="display:none;">
+                            <div class="page-header">
+                                <h2><i class="far fa-calendar-check" aria-hidden="true"></i> Aprovação <small
+                                        class="hidden-xs"></small></h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label" for="APROVADOTESTE">Aprovado?</label>
+                                        <div class="btn-group btn-group-justified opc_aprovacao" data-toggle="buttons">
+                                            <label class="btn btn-default sim"><input type="radio" name="APROVADOTESTE"
+                                                    data-exibicao="Sim, aprovado." id="Aprovado_S" value="S"><span
+                                                    class="fa fa-check-circle"></span> Sim</label>
+                                            <label class="btn btn-default nao"><input type="radio" name="APROVADOTESTE"
+                                                    data-exibicao="Não, reprovado." id="Aprovado_N" value="N"><span
+                                                    class="fa fa-times-circle"></span> Não</label>
+                                        </div>
+                                        <label class="btn btn-default" style="display:none;"><input type="radio"
+                                                name="APROVADO" data-exibicao="N/A, sem resposta." id="Aprovado_NA"
+                                                value="NA">Sem
+                                            Resposta</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-8">
+                                    <div class="form-group">
+                                        <label class="control-label" for="APROVADOOBSTESTE">Observações do RH</label>
+                                        <textarea class="form-control" rows="1" name="APROVADOOBSTESTE"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 msg-aprov">
+                                    <div class="alert" role="alert" style="display:none;" view></div>
+                                </div>
+                                <div style="display:none;">
+                                    <div class="col-xs-3">
+                                        <div class="form-group">
+                                            <label class="control-label" for="APROVADORIDTESTE">ID do Aprovador</label>
+                                            <input type="text" class="form-control" name="APROVADORIDTESTE">
+                                            <p class="help-block">Id do usuário responsável pela aprovação</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <div class="form-group">
+                                            <label class="control-label" for="APROVADORNOMETESTE">Nome do
+                                                Aprovador</label>
+                                            <input type="text" class="form-control" name="APROVADORNOMETESTE">
+                                            <p class="help-block">Nome do usuário responsável pela aprovação</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <div class="form-group">
+                                            <label class="control-label" for="APROVADOREMAILTESTE">Email do
+                                                Aprovador</label>
+                                            <input type="text" class="form-control" name="APROVADOREMAILTESTE">
+                                            <p class="help-block">Email do usuário responsável pela aprovação</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <div class="form-group">
+                                            <label class="control-label" for="APROVADODATATESTE">Dta/Hra da
+                                                Aprov/Reprov</label>
+                                            <input type="text" class="form-control" name="APROVADODATATESTE">
+                                            <p class="help-block">Data da aprovação/reprovação</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- FINAL: Seção de aprovação -->
                         <!-- tabela de acoes complementares -->
                         <div class="panel-body">
                             <div class="row">
@@ -317,134 +449,6 @@
 
 
                 </section>
-                <!-- FINAL: Tabela Pai e Filho -->
-
-                <!-- INÍCIO: informações de CEP -->
-                <!-- <section class="secCEP" id="secCEP">
-                    <div class="panel panel-default">
-                        <div class="page-header">
-                            <h1>
-                                <span style="padding-left: 20px;"
-                                    class="fs-no-margin fs-ellipsis fs-full-width uf-colormenu">
-                                    <i class="fluigicon fluigicon-fileedit icon-lg"></i>
-                                    Dados do Endereço</span>
-                                <small class="title-small"></small>
-                            </h1>
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-sm-3 col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label" for="CEPEXEMPLO"> CEP </label>
-                                        <input type="text" name="CEPEXEMPLO" class="form-control required" />
-                                    </div>
-                                </div>
-                                <div class="col-sm-7 col-md-7">
-                                    <div class="form-group">
-                                        <label class="control-label" for="RUACEPEXEMPLO"> Endereço </label>
-                                        <input type="text" name="RUACEPEXEMPLO" class="form-control" readonly />
-                                    </div>
-                                </div>
-                                <div class="col-sm-2 col-md-2">
-                                    <div class="form-group">
-                                        <label class="control-label" for="NUMEROCEPEXEMPLO"> Nº </label>
-                                        <input type="text" name="NUMEROCEPEXEMPLO" class="form-control required" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-5 col-md-5">
-                                    <div class="form-group">
-                                        <label class="control-label" for="BAIRROCEPEXEMPLO"> Bairro </label>
-                                        <input type="text" name="BAIRROCEPEXEMPLO" class="form-control" readonly />
-                                    </div>
-                                </div>
-                                <div class="col-sm-4 col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label" for="CIDADECEPEXEMPLO"> Cidade </label>
-                                        <input type="text" name="CIDADECEPEXEMPLO" class="form-control" readonly />
-                                    </div>
-                                </div>
-                                <div class="col-sm-3 col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label" for="UFCEPEXEMPLO"> UF </label>
-                                        <input type="text" name="UFCEPEXEMPLO" class="form-control" readonly />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section> -->
-                <!-- FINAL: informações de CEP -->
-
-                <!-- INÍCIO: Seção de aprovação -->
-                <section class="secAprovacaoTESTE" id="secAprovacaoTESTE" style="display:none;">
-                    <div class="page-header">
-                        <h2><i class="far fa-calendar-check" aria-hidden="true"></i> Aprovação <small
-                                class="hidden-xs"></small></h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-4">
-                            <div class="form-group">
-                                <label class="control-label" for="APROVADOTESTE">Aprovado?</label>
-                                <div class="btn-group btn-group-justified opc_aprovacao" data-toggle="buttons">
-                                    <label class="btn btn-default sim"><input type="radio" name="APROVADOTESTE"
-                                            data-exibicao="Sim, aprovado." id="Aprovado_S" value="S"><span
-                                            class="fa fa-check-circle"></span> Sim</label>
-                                    <label class="btn btn-default nao"><input type="radio" name="APROVADOTESTE"
-                                            data-exibicao="Não, reprovado." id="Aprovado_N" value="N"><span
-                                            class="fa fa-times-circle"></span> Não</label>
-                                </div>
-                                <label class="btn btn-default" style="display:none;"><input type="radio" name="APROVADO"
-                                        data-exibicao="N/A, sem resposta." id="Aprovado_NA" value="NA">Sem
-                                    Resposta</label>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-8">
-                            <div class="form-group">
-                                <label class="control-label" for="APROVADOOBSTESTE">Observações do RH</label>
-                                <textarea class="form-control" rows="1" name="APROVADOOBSTESTE"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 msg-aprov">
-                            <div class="alert" role="alert" style="display:none;" view></div>
-                        </div>
-                        <div style="display:none;">
-                            <div class="col-xs-3">
-                                <div class="form-group">
-                                    <label class="control-label" for="APROVADORIDTESTE">ID do Aprovador</label>
-                                    <input type="text" class="form-control" name="APROVADORIDTESTE">
-                                    <p class="help-block">Id do usuário responsável pela aprovação</p>
-                                </div>
-                            </div>
-                            <div class="col-xs-3">
-                                <div class="form-group">
-                                    <label class="control-label" for="APROVADORNOMETESTE">Nome do Aprovador</label>
-                                    <input type="text" class="form-control" name="APROVADORNOMETESTE">
-                                    <p class="help-block">Nome do usuário responsável pela aprovação</p>
-                                </div>
-                            </div>
-                            <div class="col-xs-3">
-                                <div class="form-group">
-                                    <label class="control-label" for="APROVADOREMAILTESTE">Email do Aprovador</label>
-                                    <input type="text" class="form-control" name="APROVADOREMAILTESTE">
-                                    <p class="help-block">Email do usuário responsável pela aprovação</p>
-                                </div>
-                            </div>
-                            <div class="col-xs-3">
-                                <div class="form-group">
-                                    <label class="control-label" for="APROVADODATATESTE">Dta/Hra da Aprov/Reprov</label>
-                                    <input type="text" class="form-control" name="APROVADODATATESTE">
-                                    <p class="help-block">Data da aprovação/reprovação</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- FINAL: Seção de aprovação -->
-
                 <!-- INÍCIO: rodapé do pedido -->
                 <section class="secRodape" id="secRodape">
                     <div class="row">

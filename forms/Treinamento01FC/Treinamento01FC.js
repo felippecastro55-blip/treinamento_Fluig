@@ -217,9 +217,9 @@ $(document).ready(function () {
 		{
 			id: 'secDependentes',
 			visible: false, //TRUE = SEMPRE VISIVEL || FALSE = VISIVEL APENAS NAS ATIVIDADES CONTIDAS EM VISIBLEATV
-			visibleAtv: [0, 1, 2, 4, 6], //LISTA DE ATIVIDADES QUE ESSA SECTION É VISIVEL
+			visibleAtv: [5], //LISTA DE ATIVIDADES QUE ESSA SECTION É VISIVEL
 			enabled: true, //TRUE = TAL SECTION É ENABLED EM ALGUMA ATIVIDADE || FALSE = SEMPRE DISABLED
-			enabledAtv: [0, 1] //LISTA DE ATIVIDADES QUE ESSA SECTION NÃO ESTÁ DISABLED
+			enabledAtv: [5] //LISTA DE ATIVIDADES QUE ESSA SECTION NÃO ESTÁ DISABLED
 		},
 		{
 			id: 'secCEP',
@@ -335,7 +335,6 @@ $(document).ready(function () {
 			customActions: function () {
 				var secNome = ['secAprovacaoTESTE']
 				var arrayWKNumstate = [2]
-	
 				if (modForm == 'VIEW') { // No modo view esconde as seções de aprovações necessárias
 					arrayWKNumstate.forEach(function (item, i) {
 						if (item == WKNumState) {
@@ -354,6 +353,18 @@ $(document).ready(function () {
                     JSInterface.showCamera("Cotacao"); // anexando
                     parent.$("#attachmentsStatusTab").trigger("click");
                 });
+            },
+        },
+		{
+            state: { type: "default", num: [5] },
+            customActions: function () {
+				$("[name='APROVADOTESTE']").on("click", function(){
+					if($(this).val() == "S"){
+
+					} else{
+						
+					}
+				})
             },
         },
 	];
