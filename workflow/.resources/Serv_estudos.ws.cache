@@ -10,6 +10,21 @@
    </array>
   </void>
   <void method="put">
+   <string>mecanismoGrupo</string>
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Aprovadores de Ferias pelo RH</string>
+      </void>
+      <void property="groupId">
+       <string>AprovadoresRH_FC</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="put">
    <string>camposFormulario, documentoId = 6</string>
    <array class="java.lang.String" length="26">
     <void index="0">
@@ -93,28 +108,16 @@
    </array>
   </void>
   <void method="put">
-   <string>mecanismoGrupo</string>
-   <object class="java.util.ArrayList">
-    <void method="add">
-     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
-      <void property="groupDescription">
-       <string>Aprovadores de Ferias pelo RH</string>
-      </void>
-      <void property="groupId">
-       <string>AprovadoresRH_FC</string>
-      </void>
-     </object>
-    </void>
-   </object>
-  </void>
-  <void method="put">
    <string>expediente</string>
-   <array class="java.lang.String" length="2">
+   <array class="java.lang.String" length="3">
     <void index="0">
      <string>Default</string>
     </void>
     <void index="1">
      <string>Exoediente Férias - FC</string>
+    </void>
+    <void index="2">
+     <string>ExpedienteDiasCorridos</string>
     </void>
    </array>
   </void>

@@ -34,7 +34,7 @@ $(document).ready(function () {
 
 				})
 
-				$self.on("change",function(){
+				$self.on("change", function () {
 					atualizaDataFim()
 				})
 			}
@@ -44,7 +44,7 @@ $(document).ready(function () {
 			name: 'DURACAOFERIAS', //NOME DO CAMPO
 			class: ['text-right'],
 			fieldType: 'money', //TIPO DE CAMPO monetario
-			validate: ['required','tamanhoMaiorQue10','tamanhoMenorQue30'],
+			validate: ['required', 'tamanhoMaiorQue10', 'tamanhoMenorQue30'],
 			fieldOptions: {
 				prefix: '',
 				thousands: '',
@@ -52,10 +52,10 @@ $(document).ready(function () {
 			},
 			customActions: function ($self) { //função para customização
 
-				$self.on("keypress",function(){
-					
+				$self.on("keypress", function () {
+
 					atualizaDataFim()
-					
+
 				});
 			}
 		},
@@ -80,7 +80,7 @@ $(document).ready(function () {
 				columns: [
 					{ title: 'Matricula', data: 'login', className: 'text-nowrap' },
 					{ title: 'Nome', data: 'colleagueName' },
-					{ title: 'Email', data: 'mail'},
+					{ title: 'Email', data: 'mail' },
 				],
 			},
 			zoomReturn: {
@@ -109,8 +109,8 @@ $(document).ready(function () {
 			zoomOptions: {
 				tooltip: false,
 				label: 'processos',
-				serverSide:{
-					searchWithValue: async function({value}){
+				serverSide: {
+					searchWithValue: async function ({ value }) {
 						const processId = "FLUIGADHOC"
 						const url = `/process-management/api/v2/processes/${processId}/requests/tasks?
 													&expand=deadlineSpecification
@@ -123,9 +123,9 @@ $(document).ready(function () {
 							total: this.total
 						}
 					},
-					objSearch: async function({start,pageSize,page}){
+					objSearch: async function ({ start, pageSize, page }) {
 						const processId = "FLUIGADHOC"
-						if(!this.total){
+						if (!this.total) {
 							const url = `/process-management/api/v2/processes/${processId}/requests/tasks/resume`
 							let response = await fetch(url)
 							response = await response.json()
@@ -180,7 +180,7 @@ $(document).ready(function () {
 		{
 			name: 'INFOADICIONAIS', //NOME DO CAMPO
 			state: { type: 'default', num: [0, 1] }, //type: LISTA DE ESTADO DO FORMULARIO (EX: ['VIEW']). DEFAULT = [MOD, ADD] || NUM = LISTA DE ATIVIDADES QUE TAL CONFIGURAÇÃO VAI AGIR. (EX: [1, 2]). "all" = TODAS 
-			validate: ['required','tamanhoMaiorQue30']
+			validate: ['required', 'tamanhoMaiorQue30']
 		},
 	];
 
@@ -203,9 +203,9 @@ $(document).ready(function () {
 		{
 			id: 'secRequisicao',
 			visible: false, //TRUE = SEMPRE VISIVEL || FALSE = VISIVEL APENAS NAS ATIVIDADES CONTIDAS EM VISIBLEATV
-			visibleAtv: [0, 1, 2, 4, 6], //LISTA DE ATIVIDADES QUE ESSA SECTION É VISIVEL. 
+			visibleAtv: [0,4,7], //LISTA DE ATIVIDADES QUE ESSA SECTION É VISIVEL. 
 			enabled: true, //TRUE = TAL SECTION É ENABLED EM ALGUMA ATIVIDADE || FALSE = SEMPRE DISABLED
-			enabledAtv: [0, 1] //LISTA DE ATIVIDADES QUE ESSA SECTION NÃO ESTÁ DISABLED. "all" HABILITA TODAS AS ATIVIDADES
+			enabledAtv: [0,4,7] //LISTA DE ATIVIDADES QUE ESSA SECTION NÃO ESTÁ DISABLED. "all" HABILITA TODAS AS ATIVIDADES
 		},
 		{
 			id: 'secAprovacaoTESTE',
@@ -217,7 +217,7 @@ $(document).ready(function () {
 		{
 			id: 'secDependentes',
 			visible: false, //TRUE = SEMPRE VISIVEL || FALSE = VISIVEL APENAS NAS ATIVIDADES CONTIDAS EM VISIBLEATV
-			visibleAtv: [5], //LISTA DE ATIVIDADES QUE ESSA SECTION É VISIVEL
+			visibleAtv: [], //LISTA DE ATIVIDADES QUE ESSA SECTION É VISIVEL
 			enabled: true, //TRUE = TAL SECTION É ENABLED EM ALGUMA ATIVIDADE || FALSE = SEMPRE DISABLED
 			enabledAtv: [5] //LISTA DE ATIVIDADES QUE ESSA SECTION NÃO ESTÁ DISABLED
 		},
@@ -236,92 +236,101 @@ $(document).ready(function () {
 	 */
 	var tablesConfig = [
 		{
-            state: { type: "default", num: ["all"] },
-            id: "tblPaiFilho",
-            fields: [
-                {
-                    state: { type: "default", num: ["all"] },
-                    fieldType: "zoom", //TIPO DE CAMPO APROVACAO
-                    name: "ZOOMCOMP", //STRING CHAVE PARA INICIAR APROVACAO
-                    validate: ["required"],
-                    zoomOptions: {
-                        label: "Ações",
-                        uFZommType: "5", // 1=DataServer | 2=Consulta | 3=Dataset | 4=query  | 5=array
-                        clear: [
-                            {
-                                name: "ZOOMCOMP",
-                            },
-                            {
-                                name: "ACAOCOD",
-                            },
-                        ],
-                        CodQuery: [// dataserver | codsentenca | nome_dataset | array
+			state: { type: "default", num: ["all"] },
+			id: "tblPaiFilho",
+			fields: [
+				{
+					state: { type: "default", num: ["5"] },
+					fieldType: "zoom", //TIPO DE CAMPO APROVACAO
+					name: "ZOOMCOMP", //STRING CHAVE PARA INICIAR APROVACAO
+					validate: ["required"],
+					zoomOptions: {
+						label: "Ações",
+						uFZommType: "5", // 1=DataServer | 2=Consulta | 3=Dataset | 4=query  | 5=array
+						clear: [
 							{
-								'ACTIONCOD': '0',
-								'ACTION': 'Enviar email'
+								name: "ZOOMCOMP",
 							},
 							{
-								'ACTIONCOD': '1',
-								'ACTION': 'Enviar email e acompanhar resposta'
+								name: "ACAOCOD",
 							},
-						], 
-                        constraints: [],
-                        // Fields que serão inseridos no dataset para o uFZommType: '3'
-                        dsFields: ["ACTIONCOD","ACTION"],
-                        columns: [
-                            { title: "Código", data: "ACTIONCOD" },
-                            { title: "Ação", data: "ACTION" },
-                        ],
-                    },
-                    zoomReturn: {
-                        //DEFAULT = RETORNO DO DATASET DIRETO PARA CAMPOS DO FORM
-                        //1 = UTILIZA 'DE PARA' do fields
-                        //2 = UTILIZA 'FUNÇÃO' do fields
-                        type: "1",
-                        fields: [
-                            {
-                                data: "ACTIONCOD",
-                                formField: "ACAOCOD",
-                            },
-                            {
-                                data: "ACTION",
-                                formField: "ZOOMCOMP",
-                            },
-                        ],
-                    },
-                },
-                {
-                    name: "DATACOMP", //NOME DO CAMPO
-                    state: { type: "default", num: [0, 9, 13] }, //type: LISTA DE ESTADO DO FORMULARIO (EX: ['VIEW']). DEFAULT = [MOD, ADD] || NUM = LISTA DE ATIVIDADES QUE TAL CONFIGURAÇÃO VAI AGIR. (EX: [1, 2]). "all" = TODAS
-                    fieldType: "date", //TIPO DE CAMPO DATA
-                    validate: ['required'],
-                    fieldOptions: {
-                        minDate: moment(),
-                        useCurrent: false,
-                    },
-                    customActions: function ($self) {
-                        //função para customização
-                        $self.parent().find('.iconData').on('click', function () {
+						],
+						CodQuery: [// dataserver | codsentenca | nome_dataset | array
+							{
+								'ACTIONCOD': '01',
+								'ACTION': 'Enviar e-mail aviso'
+							},
+							{
+								'ACTIONCOD': '02',
+								'ACTION': 'Realizar pagamento'
+							},
+							{
+								'ACTIONCOD': '03',
+								'ACTION': 'Comunicado geral'
+							},
+						],
+						constraints: [],
+						// Fields que serão inseridos no dataset para o uFZommType: '3'
+						dsFields: ["ACTIONCOD", "ACTION"],
+						columns: [
+							{ title: "Código", data: "ACTIONCOD" },
+							{ title: "Ação", data: "ACTION" },
+						],
+					},
+					zoomReturn: {
+						//DEFAULT = RETORNO DO DATASET DIRETO PARA CAMPOS DO FORM
+						//1 = UTILIZA 'DE PARA' do fields
+						//2 = UTILIZA 'FUNÇÃO' do fields
+						type: "1",
+						fields: [
+							{
+								data: "ACTIONCOD",
+								formField: "ACAOCOD",
+							},
+							{
+								data: "ACTION",
+								formField: "ZOOMCOMP",
+							},
+						],
+					},
+				},
+				{
+					name: "DATACOMP", //NOME DO CAMPO
+					state: { type: "default", num: [5] }, //type: LISTA DE ESTADO DO FORMULARIO (EX: ['VIEW']). DEFAULT = [MOD, ADD] || NUM = LISTA DE ATIVIDADES QUE TAL CONFIGURAÇÃO VAI AGIR. (EX: [1, 2]). "all" = TODAS
+					fieldType: "date", //TIPO DE CAMPO DATA
+					validate: ['required'],
+					fieldOptions: {
+						minDate: moment(),
+						useCurrent: false,
+					},
+					customActions: function ($self) {
+						//função para customização
+						$self.parent().find('.iconData').on('click', function () {
 
-                            $self.trigger('click').focus();
-        
-                        });
-                    },
-                },
-            ],
-            // Função que executa antes de deletar um ITEM da tabela.
-            beforeRemoveCallback: function ($self) {
-                console.info("Rodou antes de excluir a linha: ", $self);
-            },
-            // Função que executa após deletar um ITEM da tabela  OBS: Não retorna o $self pois a linha já foi excluida.
-            afterRemoveCallback: function () {
-                console.info("Rodou após excluir a linha.");
-            },
-            // Função que executa após adicionar um ITEM da tabela.
-            afterAddLine: function ($self) {
-                console.info("Rodou após adicionar uma linha.");
-            },
-        },
+							$self.trigger('click').focus();
+
+						});
+					},
+				},
+			],
+			// Função que executa antes de deletar um ITEM da tabela.
+			beforeRemoveCallback: function ($self) {
+				var ler = $($self).closest("tr")
+					console.info(`O índice da linha excluida é: ${ler.index()-1}`);
+				
+			},
+			// Função que executa após deletar um ITEM da tabela  OBS: Não retorna o $self pois a linha já foi excluida.
+			afterRemoveCallback: function () {
+				var totalLinhasDel = $(".escopo tr").length
+				console.info(`O total de linhas atualizado é: ${totalLinhasDel-1}`);
+
+			},
+			// Função que executa após adicionar um ITEM da tabela.
+			afterAddLine: function () {
+				var totalLinhasAdd = $(".escopo tr").length
+				console.info(`O total de linhas é: ${totalLinhasAdd-1}`);
+			},
+		},
 	];
 
 	/** Configurações das customActions
@@ -347,26 +356,35 @@ $(document).ready(function () {
 			}
 		},
 		{
-            state: { type: "default", num: [0, 1, 3] },
-            customActions: function () {
-                $("#BTNANEXOCOTACAO").on("click", function () {
-                    JSInterface.showCamera("Cotacao"); // anexando
-                    parent.$("#attachmentsStatusTab").trigger("click");
-                });
-            },
-        },
+			state: { type: "default", num: [0, 1, 3] },
+			customActions: function () {
+				$("#BTNANEXOCOTACAO").on("click", function () {
+					JSInterface.showCamera("Cotacao"); // anexando
+					parent.$("#attachmentsStatusTab").trigger("click");
+				});
+			},
+		},
+		/* Custom para mostrar e ocultar tabela pai e filho, adiciona também primeira linha da tabela quando clicado no sim, caso não exista. */
 		{
-            state: { type: "default", num: [5] },
-            customActions: function () {
-				$("[name='APROVADOTESTE']").on("click", function(){
-					if($(this).val() == "S"){
-
-					} else{
-						
+			state: { type: "default", num: [5] },
+			customActions: function () {
+				$("[name='APROVADOTESTE']").on("change", function () {
+					switch ($(this).val()) {
+						case "S":
+							$(".ocultar").show()
+							/* Aqui ele verifica se existe ou não uma linha criada na tabela, se não existir ele cria. */
+							var primeiraLinha = $(".escopo")
+							if(!primeiraLinha.is(":empty")) {
+								primeiraLinha.html("")
+							}
+							break;
+						case "N":
+							$(".ocultar").hide()
+							break;
 					}
-				})
-            },
-        },
+				});
+			},
+		},
 	];
 
 	//função para determinar qual será a configuração padrao do validate dentro do framework
@@ -374,7 +392,7 @@ $(document).ready(function () {
 
 	//inicia o framework
 	uFFw.init(modForm, WKNumState, fieldsConfig, sectionsConfig, tablesConfig, customActionsConfig);
-	if(modForm != 'VIEW') setTimeout(() => {$validator.form();}, 300)
+	if (modForm != 'VIEW') setTimeout(() => { $validator.form(); }, 300)
 
 });
 
@@ -429,29 +447,29 @@ var beforeSendValidate = function (numState, nextState) {
  * retorna true se o campo tem pelo menos 30 caracteres
  * retorna false cc.
  */
- $.validator.addMethod(
-    "tamanhoMaiorQue30",
-    function (value, element) {
-        return value.length >= 30
-    },
-    "Por favor, forneça ao menos 30 caracteres."
+$.validator.addMethod(
+	"tamanhoMaiorQue30",
+	function (value, element) {
+		return value.length >= 30
+	},
+	"Por favor, forneça ao menos 30 caracteres."
 );
- $.validator.addMethod(
-    "tamanhoMaiorQue10",
-    function (value, element) {
-        return value >= 10
-    },
-    "Por favor, preencher com valores maior que 10 dias."
+$.validator.addMethod(
+	"tamanhoMaiorQue10",
+	function (value, element) {
+		return value >= 10
+	},
+	"Por favor, preencher com valores maior que 10 dias."
 );
- $.validator.addMethod(
-    "tamanhoMenorQue30",
-    function (value, element) {
-        return value <= 30
-    },
-    "Por favor, preencher com valores menor do que 30 dias."
+$.validator.addMethod(
+	"tamanhoMenorQue30",
+	function (value, element) {
+		return value <= 30
+	},
+	"Por favor, preencher com valores menor do que 30 dias."
 );
 
-function atualizaDataFim(){
+function atualizaDataFim() {
 	//Buscando valores do campo data inicial e final
 	var dataInicio = $("[name='DATAINIFERIAS']").val()
 	var duracaoFerias = $("[name='DURACAOFERIAS']").val()
@@ -462,5 +480,4 @@ function atualizaDataFim(){
 	var dataFinal = data.add(duracaoFerias, 'days').format('DD/MM/YYYY');
 	//Preenchendo campo fim férias
 	dataFimFerias.val(dataFinal)
-}	
-
+}

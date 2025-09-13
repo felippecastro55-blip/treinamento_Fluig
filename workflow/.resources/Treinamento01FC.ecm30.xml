@@ -28,7 +28,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Solicitação de Férias</processId>
-      <version>8</version>
+      <version>11</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>6</formId>
@@ -158,10 +158,12 @@
       <stateName>Ajuste Solic Férias</stateName>
       <stateDescription>Ajuste Solic Férias</stateDescription>
       <instruction></instruction>
-      <deadlineTime>0</deadlineTime>
+      <deadlineTime>172800</deadlineTime>
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Executor Atividade</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;BaseActivity&gt;4&lt;/BaseActivity&gt;&lt;Returns&gt;Last&lt;/Returns&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -185,7 +187,7 @@
       <allowanceManagerTime>0</allowanceManagerTime>
       <frequenceManagerTime>0</frequenceManagerTime>
       <inhibitTransfer>false</inhibitTransfer>
-      <periodId></periodId>
+      <periodId>ExpedienteDiasCorridos</periodId>
       <stateType>0</stateType>
       <bpmnType>80</bpmnType>
       <signalId>0</signalId>
@@ -277,12 +279,24 @@
         <companyId>1</companyId>
         <processId>Treinamento01FC</processId>
         <expressionOrder>1</expressionOrder>
-        <version>8</version>
+        <version>11</version>
         <sequence>6</sequence>
       </conditionProcessStatePK>
-      <condition>true</condition>
+      <condition></condition>
       <destinationSequenceId>8</destinationSequenceId>
-      <conditionType>0</conditionType>
+      <conditionType>1</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>Treinamento01FC</processId>
+        <expressionOrder>2</expressionOrder>
+        <version>11</version>
+        <sequence>6</sequence>
+      </conditionProcessStatePK>
+      <condition></condition>
+      <destinationSequenceId>7</destinationSequenceId>
+      <conditionType>1</conditionType>
     </ConditionProcessState>
   </list>
   <list>
@@ -567,5 +581,24 @@ Number.prototype.pad = function (size) {&#xd;
   <list/>
   <list/>
   <list/>
-  <list/>
+  <list>
+    <ConditionProcessAutomaticRules>
+      <sequence>6</sequence>
+      <expressionOrder>1</expressionOrder>
+      <ruleOrder>1</ruleOrder>
+      <field>APROVADOTESTE</field>
+      <value>S</value>
+      <operator>1</operator>
+      <valueType>1</valueType>
+    </ConditionProcessAutomaticRules>
+    <ConditionProcessAutomaticRules>
+      <sequence>6</sequence>
+      <expressionOrder>2</expressionOrder>
+      <ruleOrder>1</ruleOrder>
+      <field>APROVADOTESTE</field>
+      <value>N</value>
+      <operator>1</operator>
+      <valueType>1</valueType>
+    </ConditionProcessAutomaticRules>
+  </list>
 </list>
