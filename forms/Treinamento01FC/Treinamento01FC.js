@@ -203,14 +203,14 @@ $(document).ready(function () {
 		{
 			id: 'secRequisicao',
 			visible: false, //TRUE = SEMPRE VISIVEL || FALSE = VISIVEL APENAS NAS ATIVIDADES CONTIDAS EM VISIBLEATV
-			visibleAtv: [0,4,7], //LISTA DE ATIVIDADES QUE ESSA SECTION É VISIVEL. 
+			visibleAtv: [0, 4, 7], //LISTA DE ATIVIDADES QUE ESSA SECTION É VISIVEL. 
 			enabled: true, //TRUE = TAL SECTION É ENABLED EM ALGUMA ATIVIDADE || FALSE = SEMPRE DISABLED
-			enabledAtv: [0,4,7] //LISTA DE ATIVIDADES QUE ESSA SECTION NÃO ESTÁ DISABLED. "all" HABILITA TODAS AS ATIVIDADES
+			enabledAtv: [0, 4, 7] //LISTA DE ATIVIDADES QUE ESSA SECTION NÃO ESTÁ DISABLED. "all" HABILITA TODAS AS ATIVIDADES
 		},
 		{
 			id: 'secAprovacaoTESTE',
 			visible: false, //TRUE = SEMPRE VISIVEL || FALSE = VISIVEL APENAS NAS ATIVIDADES CONTIDAS EM VISIBLEATV
-			visibleAtv: [5], //LISTA DE ATIVIDADES QUE ESSA SECTION É VISIVEL
+			visibleAtv: [5, 7], //LISTA DE ATIVIDADES QUE ESSA SECTION É VISIVEL
 			enabled: true, //TRUE = TAL SECTION É ENABLED EM ALGUMA ATIVIDADE || FALSE = SEMPRE DISABLED
 			enabledAtv: [5] //LISTA DE ATIVIDADES QUE ESSA SECTION NÃO ESTÁ DISABLED
 		},
@@ -224,11 +224,10 @@ $(document).ready(function () {
 		{
 			id: 'secCEP',
 			visible: false, //TRUE = SEMPRE VISIVEL || FALSE = VISIVEL APENAS NAS ATIVIDADES CONTIDAS EM VISIBLEATV
-			visibleAtv: [0, 1, 2, 4, 6], //LISTA DE ATIVIDADES QUE ESSA SECTION É VISIVEL
+			visibleAtv: [], //LISTA DE ATIVIDADES QUE ESSA SECTION É VISIVEL
 			enabled: true, //TRUE = TAL SECTION É ENABLED EM ALGUMA ATIVIDADE || FALSE = SEMPRE DISABLED
-			enabledAtv: [0, 1] //LISTA DE ATIVIDADES QUE ESSA SECTION NÃO ESTÁ DISABLED
+			enabledAtv: [] //LISTA DE ATIVIDADES QUE ESSA SECTION NÃO ESTÁ DISABLED
 		}
-
 	];
 
 	/** Lista contendo objeto de tables
@@ -316,19 +315,19 @@ $(document).ready(function () {
 			// Função que executa antes de deletar um ITEM da tabela.
 			beforeRemoveCallback: function ($self) {
 				var ler = $($self).closest("tr")
-					console.info(`O índice da linha excluida é: ${ler.index()-1}`);
-				
+				console.info(`O índice da linha excluida é: ${ler.index() - 1}`);
+
 			},
 			// Função que executa após deletar um ITEM da tabela  OBS: Não retorna o $self pois a linha já foi excluida.
 			afterRemoveCallback: function () {
 				var totalLinhasDel = $(".escopo tr").length
-				console.info(`O total de linhas atualizado é: ${totalLinhasDel-1}`);
+				console.info(`O total de linhas atualizado é: ${totalLinhasDel - 1}`);
 
 			},
 			// Função que executa após adicionar um ITEM da tabela.
 			afterAddLine: function () {
 				var totalLinhasAdd = $(".escopo tr").length
-				console.info(`O total de linhas é: ${totalLinhasAdd-1}`);
+				console.info(`O total de linhas é: ${totalLinhasAdd - 1}`);
 			},
 		},
 	];
@@ -372,15 +371,34 @@ $(document).ready(function () {
 					switch ($(this).val()) {
 						case "S":
 							$(".ocultar").show()
-							/* Aqui ele verifica se existe ou não uma linha criada na tabela, se não existir ele cria. */
-							var primeiraLinha = $(".escopo")
-							if(!primeiraLinha.is(":empty")) {
-								primeiraLinha.html("")
-							}
+							var acionarPrimeiraLinha = $(".add")
+							acionarPrimeiraLinha.click()
 							break;
 						case "N":
 							$(".ocultar").hide()
 							break;
+					}
+				});
+			},
+		},
+		{
+			state: { type: "default", num: [7] },
+			customActions: function () {
+				var obsRH = $('[name="APROVADOOBSTESTE"]').text()
+				console.info(obsRH)
+				var myModal = FLUIGC.modal({
+					title: 'Motivo da Reprovação',
+					content: `<p>${obsRH}</p>`,
+					id: 'fluig-modal',
+					actions: [{
+						'label': 'OK',
+						'autoClose': true
+					}]
+				}, function (err, data) {
+					if (err) {
+						// do error handling
+					} else {
+						// do something with data
 					}
 				});
 			},
